@@ -135,5 +135,39 @@ header {
   margin: 8px 4px 0 0;
   font-weight: 700;
   text-transform: uppercase;
-  font-size: 1.2em;
+  font-size: 1em;
+}
+
+/* FORM */
+form.card input.type1
+{
+  width: 100%;
+  border: none;
+  outline: none;
+  background: hsl(0, 5%, 92%);
+  border-radius: 10px;
+  height: 2.8em;
+  font-weight: 700;
+  font-size: 0.8em;
+  padding: 0 10px;
+  box-sizing: border-box;
+  color: #555
+}
+
+form.card input[type="radio"] {
+  margin-right: 5px;
+}
+
+form.card button[type="submit"] {
+  margin-top: 32px;
+  font-size: 2em;
+  padding: 8px 32px;
+  border: none;
+  border-radius: 12px;
+  background-color:var(--primary-color);
+  color: #ffe;
+  font-weight: 700;
+  text-transform: uppercase;
+  width: 100%;
+  font-size: 1.6em;
 }

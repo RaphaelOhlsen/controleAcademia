@@ -1,1 +1,25 @@
-{"avatar_url":"http://google.com","name":"RAPHAEL BERNARDO OHLSEN","birth":"2020-02-12","gender":"M","services":"Teste, teste2"}
+{
+  "instructors": [
+    {
+      "avatar_url": "http://google.com",
+      "name": "RAPHAEL BERNARDO OHLSEN",
+      "birth": "2020-02-02",
+      "gender": "M",
+      "services": "Teste, teste2"
+    },
+    {
+      "avatar_url": "http://uol.com.br",
+      "name": "Poly",
+      "birth": "1971-02-09",
+      "gender": "M",
+      "services": "Developer"
+    },
+    {
+      "avatar_url": "http://bol.com.br",
+      "name": "dANPHER",
+      "birth": "1987-04-03",
+      "gender": "M",
+      "services": "Teste, teste2"
+    }
+  ]
+}

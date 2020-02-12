@@ -160,7 +160,7 @@ form.card input[type="radio"] {
 
 form.card button[type="submit"] {
   margin-top: 32px;
-  font-size: 2em;
+  font-size: 1.6em;
   padding: 8px 32px;
   border: none;
   border-radius: 12px;
@@ -170,4 +170,5 @@ form.card button[type="submit"] {
   text-transform: uppercase;
   width: 100%;
   font-size: 1.6em;
+  cursor: pointer;
 }

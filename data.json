@@ -1,20 +1,13 @@
 {
   "instructors": [
     {
-      "avatar_url": "http://bol.com.br",
-      "name": "Berndf",
-      "birth": "1920-02-02",
-      "gender": "M",
-      "services": "Developer",
-      "created_at": 1581530112259
-    },
-    {
+      "id": 1,
       "avatar_url": "http://google.com",
       "name": "RAPHAEL BERNARDO OHLSEN",
-      "birth": 1582675200000,
-      "gender": "F",
+      "birth": 1580860800000,
+      "gender": "M",
       "services": "Teste, teste2",
-      "created_at": 1581530580217
+      "created_at": 1581532025720
     }
   ]
 }

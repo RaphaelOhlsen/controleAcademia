@@ -14,8 +14,17 @@ routes.get("/instructors/create", (req,res) => {
 });
 
 routes.post("/instructors", (req,res) => {
-  return res.send(req.body)
+ const keys = Object.keys(req.body);
+
+  keys.forEach(key => {
+    if(req.body[key] == "") {
+      return res.send("Please, fill all fields");
+    }
+  })
+  
+  return res.send(req.body);
 });
+
 
 routes.get('/members', (req, res) => {
   return res.send("members");

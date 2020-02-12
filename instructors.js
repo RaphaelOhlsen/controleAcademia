@@ -1,6 +1,16 @@
 const fs = require('fs');
 const data = require('./data.json')
 
+//show
+exports.show = (req,res) => {
+  const { id } = req.params;
+  const foundInstructor = data.instructors.find(instructor => {
+    return instructor.id === Number(id)
+  });
+  if (!foundInstructor) return res.send("instructor not found!");
+  return res.send(foundInstructor);
+}
+
 //create 
 exports.post = (req, res) => {
 

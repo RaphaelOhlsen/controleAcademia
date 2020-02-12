@@ -11,7 +11,7 @@ routes.get("/instructors", (req,res) => {
 });
 
 routes.get("/instructors/create", (req,res) => {
-  return res.render("instructors/create")
+  return res.render("instructors/create");
 });
 
 routes.post("/instructors", instructors.post);

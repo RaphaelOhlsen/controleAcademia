@@ -15,7 +15,7 @@ exports.show = (req,res) => {
   const instructor = {
     ...foundInstructor,
     age: age(foundInstructor.birth),
-    created_at: ""
+    created_at: new Intl.DateTimeFormat("pt-BR").format(foundInstructor.created_at)
   }
 
   foundInstructor.gender === "M" 

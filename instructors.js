@@ -8,7 +8,7 @@ exports.show = (req,res) => {
     return instructor.id === Number(id)
   });
   if (!foundInstructor) return res.send("instructor not found!");
-  return res.send(foundInstructor);
+  return res.render("instructors/show", { instructor: foundInstructor });
 }
 
 //create 

@@ -1,6 +1,6 @@
 const fs = require('fs');
 const data = require('./data.json');
-const { age, strToArr } = require('./utils');
+const { age, strToArr, timeFormat } = require('./utils');
 
 //show
 exports.show = (req,res) => {
@@ -15,7 +15,7 @@ exports.show = (req,res) => {
   const instructor = {
     ...foundInstructor,
     age: age(foundInstructor.birth),
-    created_at: new Intl.DateTimeFormat("pt-BR").format(foundInstructor.created_at)
+    created_at: timeFormat(foundInstructor.created_at)
   }
 
   foundInstructor.gender === "M" 

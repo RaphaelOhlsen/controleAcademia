@@ -14,5 +14,11 @@ module.exports = {
     }
 
     return age;
+  },
+  strToArr: (str) => {
+    return str.split(',').map(el => el.trim());
   }
+
 }
+
+

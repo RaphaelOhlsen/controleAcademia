@@ -1,6 +1,6 @@
 const fs = require('fs');
 const data = require('./data.json');
-const { age } = require('./utils');
+const { age, strToArr } = require('./utils');
 
 //show
 exports.show = (req,res) => {
@@ -21,10 +21,7 @@ exports.show = (req,res) => {
   foundInstructor.gender === "M" 
     ? instructor.gender = "Masculino" : instructor.gender = "Feminino";
 
-  instructor.services = foundInstructor.services.split(',').map(el => el.trim()
-  );
-
-  
+  instructor.services = strToArr(foundInstructor.services);
 
   return res.render("instructors/show", { instructor });
 }

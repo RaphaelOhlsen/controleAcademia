@@ -158,7 +158,8 @@ form.card input[type="radio"] {
   margin-right: 5px;
 }
 
-form.card button[type="submit"] {
+form.card button[type="submit"],
+a.button {
   margin-top: 32px;
   font-size: 1.6em;
   padding: 8px 32px;
@@ -171,4 +172,11 @@ form.card button[type="submit"] {
   width: 100%;
   font-size: 1.6em;
   cursor: pointer;
+}
+
+a.button {
+  display: block;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-align: center;
 }

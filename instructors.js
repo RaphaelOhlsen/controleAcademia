@@ -7,7 +7,7 @@ exports.show = (req,res) => {
   const { id } = req.params;
   
   const foundInstructor = data.instructors.find(instructor => {
-    return instructor.id === Number(id)
+    return instructor.id == id;
   });
   
   if (!foundInstructor) return res.send("instructor not found!");
@@ -65,7 +65,7 @@ exports.edit = (req,res) => {
   const { id } = req.params;
   
   const foundInstructor = data.instructors.find(instructor => {
-    return instructor.id === Number(id)
+    return instructor.id == id
   });
   
   if (!foundInstructor) return res.send("instructor not found!");
@@ -84,7 +84,7 @@ exports.put = (req, res) => {
   let index = 0;
   
   const foundInstructor = data.instructors.find((instructor, foundIndex) => {
-    if (instructor.id === Number(id)) {
+    if (instructor.id == Number(id)) {
       index = foundIndex;
       return true;
     }
@@ -95,13 +95,14 @@ exports.put = (req, res) => {
   const instructor = {
     ...foundInstructor,
     ...req.body,
-    birth: Date.parse(birth)
+    birth: Date.parse(birth),
+    id: Number(id)
   };
 
   data.instructors[index] = instructor;
 
   fs.writeFile("data.json", JSON.stringify(data, null, 2), err => {
     if(err) return res.send("Write error!");
-    return res.redirect(`/instructor/${id}`);
+    return res.redirect(`/instructors/${id}`);
   });
 }

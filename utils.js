@@ -1,7 +1,7 @@
 const Intl = require('intl');
 
 module.exports = {
-  age: (timestamp) => {
+  age: timestamp => {
     const today = new Date();
     const birthDate = new Date(timestamp);
     let age = today.getFullYear() - birthDate.getFullYear();

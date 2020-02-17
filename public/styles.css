@@ -78,9 +78,9 @@ header {
   animation-name: up 200ms ease;
 }
 
-.card .avatar {
+/* .card .avatar {
   background: url('https://source.unsplash.com/collection/3465564/500x500') no-repeat center center/ cover;
-}
+} */
 
 @keyframes up {
   0% {

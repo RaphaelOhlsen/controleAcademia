@@ -95,7 +95,7 @@ exports.put = (req, res) => {
   const instructor = {
     ...foundInstructor,
     ...req.body,
-    birth: DataCue.parse(birth)
+    birth: Date.parse(birth)
   };
 
   data.instructors[index] = instructor;

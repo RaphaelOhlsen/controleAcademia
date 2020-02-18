@@ -2,6 +2,12 @@ const fs = require('fs');
 const data = require('./data.json');
 const { age, strToArr, timeFormat, date } = require('./utils');
 
+//index
+exports.index = (req, res) => {
+
+  return res.render("instructors/index", {instructors: data.instructors});
+}
+
 //show
 exports.show = (req,res) => {
   const { id } = req.params;
@@ -110,7 +116,6 @@ exports.put = (req, res) => {
 //delete
 exports.delete = (req,res) => {
   const {id} = req.body;
-  console.log(id);
 
   const filteredInstructors = data.instructors.filter(instructor => {
     return instructor.id != id;

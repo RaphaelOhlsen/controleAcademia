@@ -78,10 +78,6 @@ header {
   animation-name: up 200ms ease;
 }
 
-/* .card .avatar {
-  background: url('https://source.unsplash.com/collection/3465564/500x500') no-repeat center center/ cover;
-} */
-
 @keyframes up {
   0% {
     opacity: 0;
@@ -139,7 +135,7 @@ header {
 }
 
 /* FORM */
-form.card input.type1
+.card input.type1
 {
   width: 100%;
   border: none;
@@ -154,11 +150,11 @@ form.card input.type1
   color: #555
 }
 
-form.card input[type="radio"] {
+.card input[type="radio"] {
   margin-right: 5px;
 }
 
-form.card button[type="submit"],
+button[type="submit"],
 a.button {
   margin-top: 32px;
   font-size: 1.6em;
@@ -179,4 +175,9 @@ a.button {
   box-sizing: border-box;
   text-decoration: none;
   text-align: center;
+}
+
+button.--danger {
+  margin-top: 8px;
+  background-color: lightcoral;
 }

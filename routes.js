@@ -18,9 +18,12 @@ routes.get("/instructors/:id", instructors.show);
 
 routes.get("/instructors/:id/edit", instructors.edit);
 
+routes.delete("/instructors", instructors.delete);
+
 routes.post("/instructors", instructors.post);
 
 routes.put("/instructors", instructors.put);
+
 
 routes.get('/members', (req, res) => {
   return res.send("members");

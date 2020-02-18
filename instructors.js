@@ -4,8 +4,13 @@ const { age, strToArr, timeFormat, date } = require('./utils');
 
 //index
 exports.index = (req, res) => {
+  const instructors = data.instructors;
+  instructors.forEach(instructor => {
+    instructor.services_arr = strToArr(instructor.services);
+  })
+  console.log(instructors);
 
-  return res.render("instructors/index", {instructors: data.instructors});
+  return res.render("instructors/index", { instructors });
 }
 
 //show

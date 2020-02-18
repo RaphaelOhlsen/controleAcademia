@@ -248,3 +248,16 @@ tbody tr td:last-child a {
   border-radius: 4px;
 }
 
+tbody tr td span.service {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: var(--secondary-color);
+  border-radius: 16px;
+  color: #777;
+  margin: 0 4px 0 0;
+  font-weight: 700;
+}
+
+tbody tr td span.service:last-child {
+  margin: 0;
+}

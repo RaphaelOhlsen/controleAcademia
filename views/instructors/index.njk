@@ -12,7 +12,7 @@
       </tr>
     </thead>
     <tbody>
-      {% for instructor in instructors %}
+      {% for instructor in _instructors %}
         <tr>  
           <td>
             <span style="background-image: url({{instructor.avatar_url}})">
@@ -20,7 +20,7 @@
             {{instructor.name}}
           </td>
           <td>
-            {% for service in instructor.services_arr %}
+            {% for service in instructor.services %}
               <span class="service">{{ service }}</span>
             {% endfor %}
           </td>

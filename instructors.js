@@ -4,13 +4,24 @@ const { age, strToArr, timeFormat, date } = require('./utils');
 
 //index
 exports.index = (req, res) => {
-  const instructors = data.instructors;
-  instructors.forEach(instructor => {
-    instructor.services_arr = strToArr(instructor.services);
-  })
-  console.log(instructors);
+  const _instructors = data.instructors.slice();
+ 
 
-  return res.render("instructors/index", { instructors });
+  
+  _instructors.forEach(instructor => {
+    instructor.services = strToArr(instructor.services);
+  })
+  
+  console.log('-------------------------------------------------------');
+  console.log('_instructors')
+  console.log('-------------------------------------------------------');
+  console.log(_instructors);
+  console.log('-------------------------------------------------------');
+  console.log('instructors')
+  console.log('-------------------------------------------------------');
+  console.log(data.instructors);
+
+  return res.render("instructors/index", { _instructors });
 }
 
 //show
@@ -20,6 +31,12 @@ exports.show = (req,res) => {
   const foundInstructor = data.instructors.find(instructor => {
     return instructor.id == id;
   });
+
+  console.log('-------------------------------------------------------');
+  console.log('data.instructors')
+  console.log('-------------------------------------------------------');
+
+  console.log(foundInstructor);
   
   if (!foundInstructor) return res.send("instructor not found!");
   

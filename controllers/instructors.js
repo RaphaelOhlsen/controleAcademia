@@ -1,25 +1,21 @@
 const fs = require('fs');
-const data = require('./data.json');
-const { age, strToArr, timeFormat, date } = require('./utils');
+const data = require('../data.json');
+const { age, strToArr, timeFormat, date } = require('../utils');
 
-//index
+
 exports.index = (req, res) => {
   const filteredInstructors = data.instructors
-
-  console.log(filteredInstructors);
 
   for (const instructor of filteredInstructors) {
       const services = instructor.services.toString().split(",")
       instructor.services = services
   }
 
-  console.log(filteredInstructors);
-
   return res.render('instructors/index', { instructors: filteredInstructors })
 
 }
 
-//show
+
 exports.show = (req,res) => {
   const { id } = req.params;
   
@@ -44,7 +40,10 @@ exports.show = (req,res) => {
   return res.render("instructors/show", { instructor });
 }
 
-//create 
+exports.create = (req,res) => {
+    return res.render("instructors/create")
+}
+
 exports.post = (req, res) => {
 
   const keys = Object.keys(req.body);
@@ -78,7 +77,7 @@ exports.post = (req, res) => {
   });
 }
  
-//edit
+
 exports.edit = (req,res) => {
   const { id } = req.params;
   
@@ -96,7 +95,7 @@ exports.edit = (req,res) => {
   return res.render('instructors/edit', {instructor} );
 }
 
-//put
+
 exports.put = (req, res) => {
   const { id, birth } = req.body;
   let index = 0;
@@ -125,7 +124,6 @@ exports.put = (req, res) => {
   });
 }
 
-//delete
 exports.delete = (req,res) => {
   const {id} = req.body;
 

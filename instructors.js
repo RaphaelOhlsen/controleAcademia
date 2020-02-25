@@ -4,24 +4,19 @@ const { age, strToArr, timeFormat, date } = require('./utils');
 
 //index
 exports.index = (req, res) => {
-  const _instructors = data.instructors.slice();
- 
+  const filteredInstructors = data.instructors
 
-  
-  _instructors.forEach(instructor => {
-    instructor.services = strToArr(instructor.services);
-  })
-  
-  console.log('-------------------------------------------------------');
-  console.log('_instructors')
-  console.log('-------------------------------------------------------');
-  console.log(_instructors);
-  console.log('-------------------------------------------------------');
-  console.log('instructors')
-  console.log('-------------------------------------------------------');
-  console.log(data.instructors);
+  console.log(filteredInstructors);
 
-  return res.render("instructors/index", { _instructors });
+  for (const instructor of filteredInstructors) {
+      const services = instructor.services.toString().split(",")
+      instructor.services = services
+  }
+
+  console.log(filteredInstructors);
+
+  return res.render('instructors/index', { instructors: filteredInstructors })
+
 }
 
 //show
@@ -31,25 +26,20 @@ exports.show = (req,res) => {
   const foundInstructor = data.instructors.find(instructor => {
     return instructor.id == id;
   });
-
-  console.log('-------------------------------------------------------');
-  console.log('data.instructors')
-  console.log('-------------------------------------------------------');
-
-  console.log(foundInstructor);
   
   if (!foundInstructor) return res.send("instructor not found!");
   
   const instructor = {
     ...foundInstructor,
     age: age(foundInstructor.birth),
+    services: foundInstructor.services.toString().split(","),
     created_at: timeFormat(foundInstructor.created_at)
   }
   
   foundInstructor.gender === "M" 
   ? instructor.gender = "Masculino" : instructor.gender = "Feminino";
   
-  instructor.services = strToArr(foundInstructor.services);
+  // instructor.services = strToArr(foundInstructor.services);
 
   return res.render("instructors/show", { instructor });
 }

@@ -68,7 +68,7 @@ exports.post = (req, res) => {
   const created_at = Date.now();
 
   let id = 1;
-  const lastMember = data.members[data.members.length =1];
+  const lastMember = data.members[data.members.length - 1];
   if(lastMember) {
     id = lastMember.id + 1;
   }

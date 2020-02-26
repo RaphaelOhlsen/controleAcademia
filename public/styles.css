@@ -135,7 +135,8 @@ header {
 }
 
 /* FORM */
-.card input.type1
+.card input.type1,
+select
 {
   width: 100%;
   border: none;
@@ -149,6 +150,8 @@ header {
   box-sizing: border-box;
   color: #555
 }
+
+
 
 .card input[type="radio"] {
   margin-right: 5px;

@@ -27,7 +27,15 @@ module.exports = {
     const month = `0${date.getUTCMonth() + 1}`.slice(-2);
     const day = `0${date.getUTCDate()}`.slice(-2);
     return `${year}-${month}-${day}`;
-  }
-
+  },
+  bloodType: blood => {
+    const subType = blood.slice(-1)
+    if (subType === '1') {
+      return blood.replace(subType,"+")
+    }
+    return blood.replace(subType, "-")
+    }
 }
+
+
 

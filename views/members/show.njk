@@ -17,8 +17,13 @@
     </div>
 
     <div class="item">
+      <div>Email</div>
+      <div>{{ member.email }}</div>
+    </div>
+
+    <div class="item">
       <div>Aniversário</div>
-      <div>{{ member.age }}</div>
+      <div>{{ member.birth }}</div>
     </div>
 
      <div class="item">
@@ -27,17 +32,20 @@
     </div>
 
     <div class="item">
-      <div>Acompanhamento</div>
-      {% for service in member.services %}
-        <span>{{ service }}</span>
-      {% endfor %}
-
+      <div>Tipo Sanguíneo</div>
+      <div>{{ member.blood }}</div>
     </div>
 
     <div class="item">
-      <div>Desde</div>
-      <div>{{ member.created_at }}</div>
+      <div>Peso</div>
+      <div>{{ member.weight }} kg</div>
     </div>
+    
+    <div class="item">
+      <div>Altura</div>
+      <div>{{ member.height }} cm</div>
+    </div>
+
     <a href="/members/{{member.id}}/edit" class="button">Editar</a>
   </section>
 </form>

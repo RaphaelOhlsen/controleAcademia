@@ -1,6 +1,6 @@
 const fs = require('fs');
 const data = require('../data.json');
-const { age, date } = require('../utils');
+const { age, date, bloodType } = require('../utils');
 
 
 exports.index = (req, res) => {
@@ -28,8 +28,11 @@ exports.show = (req,res) => {
   const member = {
     ...foundMember,
     age: age(foundMember.birth),
+    blood: bloodType(foundMember.blood)
   }
   
+  // console.log(bloodType(foundMember.blood))
+
   foundMember.gender === "M" 
   ? member.gender = "Masculino" : member.gender = "Feminino";
   

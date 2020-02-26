@@ -4,14 +4,9 @@ const { date, bloodType } = require('../utils');
 
 
 exports.index = (req, res) => {
-  const filteredMembers = data.members
+  const members = data.members;
 
-  for (const member of filteredMembers) {
-      const services = member.services.toString().split(",")
-      member.services = services
-  }
-
-  return res.render('members/index', { members: filteredMembers })
+  return res.render('members/index', { members })
 
 }
 

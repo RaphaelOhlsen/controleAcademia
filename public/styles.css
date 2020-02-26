@@ -208,8 +208,8 @@ td, th {
 }
 
 td {
-  font-size: 1.6em;
-  text-transform: uppercase;
+  font-size: 1.4em;
+  /* text-transform: uppercase; */
   color: #333;
 }
 
@@ -243,15 +243,19 @@ tbody tr td:last-child a,
   background-color: var(--primary-color);
   padding: 8px 16px;
   text-decoration: none;
-  text-transform: uppercase;
   color: #fff;
   font-size: 1.2em;
   border-radius: 4px;
+  text-transform: uppercase;
 }
 
 .table-container a:first-child {
   display: inline-block;
   margin-bottom: 16px;
+}
+
+tbody tr td.information {
+  text-transform: none;
 }
 
 tbody tr td span.service {
@@ -262,6 +266,7 @@ tbody tr td span.service {
   color: #777;
   margin: 0 4px 0 0;
   font-weight: 700;
+  text-transform: uppercase;
 }
 
 tbody tr td span.service:last-child {

@@ -1,7 +1,7 @@
 const Intl = require('intl');
 
 module.exports = {
-  age: timestamp => {
+  age(timestamp) {
     const today = new Date();
     const birthDate = new Date(timestamp);
     let age = today.getFullYear() - birthDate.getFullYear();
@@ -14,14 +14,14 @@ module.exports = {
     return age;
   },
 
-  strToArr: str => {
+  strToArr(str) {
     return str.split(',').map(el => el.trim());
   },
 
-  timeFormat: time => {
+  timeFormat(time) {
     return new Intl.DateTimeFormat("pt-BR").format(time);
   },
-  date: timestamp => {
+  date(timestamp) {
     const date = new Date(timestamp);
     const year = date.getUTCFullYear();
     const month = `0${date.getUTCMonth() + 1}`.slice(-2);
@@ -34,7 +34,7 @@ module.exports = {
       birthDay: `${day}/${month}`
     }
   },
-  bloodType: blood => {
+  bloodType(blood) {
     const subType = blood.slice(-1)
     if (subType === '1') {
       return blood.replace(subType,"+")

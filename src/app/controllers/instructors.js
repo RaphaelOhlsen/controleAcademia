@@ -3,9 +3,17 @@ const db = require('../../config/db');
 
 module.exports = {
   index(req, res) {
-    // console.log('teste');
-    return res.render('instructors/index');
+    db.query(`SELECT * FROM instructors`, function(err, results) {
+      if(err) return res.send("Database Error!");
+      const instructors = results.rows;
+      for (const instructor of instructors) {
+        const services = instructor.services.toString().split(",")
+        instructor.services = services
+    }
+      return res.render('instructors/index', { instructors });
+    });
   },
+
   create(req, res) {
     return res.render("instructors/create");
   },

@@ -1,5 +1,5 @@
-
 const Instructor = require('../models/Instructor');
+const { age, strToArr, timeFormat, date } = require('../../lib/utils');
 
 module.exports = {
   index(req, res) {
@@ -32,7 +32,15 @@ module.exports = {
   },
 
   show(req, res) {
-    return
+    Instructor.find(req.params.id, function(instructor) {
+      if(!instructor) return res.send("Instructor not found!");
+
+      instructor.age = age(instructor.birth);
+      instructor.services = instructor.services.split(',');
+      instructor.created_at = date(instructor.created_at).format;
+
+      return res.render("instructors/show", { instructor });
+    });
   },
   edit(req, res) {
     return

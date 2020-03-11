@@ -9,8 +9,7 @@ module.exports = {
         instructor.services = services
     }
       return res.render('instructors/index', { instructors });
-    })
-     
+    }); 
   },
 
   create(req, res) {

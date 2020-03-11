@@ -5,10 +5,6 @@ const Member = require('../models/Member');
 module.exports = {
   index(req, res) {
     Member.all(function(members) {
-      for (const member of members) {
-        const services = member.services.toString().split(",")
-        member.services = services
-    }
       return res.render('members/index', { members });
     }); 
   },

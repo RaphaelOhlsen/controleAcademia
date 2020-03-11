@@ -7,7 +7,7 @@ module.exports = {
       for (const instructor of instructors) {
         const services = instructor.services.toString().split(",")
         instructor.services = services
-    }
+      }
       return res.render('instructors/index', { instructors });
     }); 
   },

@@ -28,7 +28,13 @@
 
      <div class="item">
       <div>Sexo</div>
-      <div>{{ member.gender }}</div>
+      <div>
+        {% if member.gender == "F" %}
+          Feminino
+        {% else %}
+          Masculino
+        {% endif %}
+      </div>
     </div>
 
     <div class="item">

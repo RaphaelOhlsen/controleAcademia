@@ -5,7 +5,7 @@ module.exports = {
   index(req, res) {
     Instructor.all(function(instructors) {
       for (const instructor of instructors) {
-        const services = instructor.services.toString().split(",")
+        const services = instructor.services.toString().split(",");
         instructor.services = services
       }
       return res.render('instructors/index', { instructors });

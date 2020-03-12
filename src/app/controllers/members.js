@@ -1,4 +1,4 @@
-const { age, strToArr, timeFormat, date } = require('../../lib/utils');
+const { date } = require('../../lib/utils');
 
 const Member = require('../models/Member');
 
@@ -10,7 +10,10 @@ module.exports = {
   },
 
   create(req, res) {
-    return res.render("members/create");
+
+    Member.instructorSelectOptions(function(options) {
+      return res.render("members/create", { instructorOptions: options });
+    })
   },
 
   post(req, res) {

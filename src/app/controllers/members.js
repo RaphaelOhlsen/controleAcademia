@@ -47,8 +47,7 @@ module.exports = {
       member.birth = date(member.birth).iso;
 
       Member.instructorSelectOptions(function(options) {
-        console.log(options);
-        console.log(member.instructor_id);
+        
         return res.render("members/edit", { member, instructorOptions: options });
       });
     });

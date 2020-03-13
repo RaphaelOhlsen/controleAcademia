@@ -309,4 +309,5 @@ tbody tr td span.service:last-child {
   margin: 0;
   text-transform: none;
   font-weight: normal;
+  border-radius: 4px;
 }

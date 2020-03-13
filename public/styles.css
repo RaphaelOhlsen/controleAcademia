@@ -169,7 +169,7 @@ a.button {
   font-weight: 700;
   text-transform: uppercase;
   width: 100%;
-  font-size: 1.6em;
+  font-size: 16px;
   cursor: pointer;
 }
 
@@ -274,4 +274,39 @@ tbody tr td span.service {
 
 tbody tr td span.service:last-child {
   margin: 0;
+}
+
+/* FILTERS */
+.table-container .header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin-bottom: 36px;
+}
+
+.table-container .header a {
+  margin: 0;
+  text-transform: none;
+  width: 120px;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+.table-container .header form {
+  display: grid;
+  grid-template-columns: 1fr 120px;
+  align-items: center;
+  grid-gap: 8px;
+}
+
+.table-container .header form input {
+  border: 1px solid #eee;
+  padding: 4px 8px;
+  box-sizing: border-box;
+}
+
+.table-container .header form button {
+  margin: 0;
+  text-transform: none;
+  font-weight: normal;
 }

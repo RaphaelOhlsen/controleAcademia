@@ -4,21 +4,12 @@ const { age, strToArr, timeFormat, date } = require('../../lib/utils');
 module.exports = {
   index(req, res) {
     const { filter } = req.query;
-    
     if(filter) {
       Instructor.findBy(filter, function(instructors) {
-        for (const instructor of instructors) {
-          const services = instructor.services.toString().split(",");
-          instructor.services = services
-        }
-        return res.render("instructors/index", { instructors });
+        return res.render("instructors/index", { instructors, filter });
       })
     } else {
       Instructor.all(function(instructors) {
-        for (const instructor of instructors) {
-          const services = instructor.services.toString().split(",");
-          instructor.services = services
-        }
         return res.render('instructors/index', { instructors });
       }); 
     } 

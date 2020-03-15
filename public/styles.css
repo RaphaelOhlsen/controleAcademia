@@ -261,7 +261,7 @@ tbody tr td.information {
   text-transform: none;
 }
 
-tbody tr td span.service {
+/* tbody tr td span.service {
   display: inline-block;
   padding: 8px 16px;
   background-color: var(--secondary-color);
@@ -270,7 +270,7 @@ tbody tr td span.service {
   margin: 0 4px 0 0;
   font-weight: 700;
   text-transform: uppercase;
-}
+} */
 
 tbody tr td span.service:last-child {
   margin: 0;

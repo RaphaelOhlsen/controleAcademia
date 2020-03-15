@@ -9,7 +9,8 @@
       <input
        type="text"
        name="filter"
-       placeholder="Filtrar por Nome"
+       placeholder="Nome ou Atendimento"
+       value={{ filter }}
       >
       <button type="submit">Filtrar</button>
     </form>
@@ -32,9 +33,7 @@
             {{instructor.name}}
           </td>
           <td>
-            {% for service in instructor.services %}
-              <span class="service">{{ service }}</span>
-            {% endfor %}
+              <span class="service">{{ instructor.services }}</span>
           </td>
           <td>{{ instructor.total_students }}</td>
           <td><a href="/instructors/{{instructor.id}}">Ver</a></td>

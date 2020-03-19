@@ -242,7 +242,7 @@ tbody tr td:first-child span {
 }
 
 tbody tr td:last-child a,
-.table-container a:first-child {
+.table-container tr a:first-child {
   background-color: var(--primary-color);
   padding: 8px 16px;
   text-decoration: none;
@@ -311,3 +311,5 @@ tbody tr td span.service:last-child {
   font-weight: normal;
   border-radius: 4px;
 }
+
+/* PAGINATION */

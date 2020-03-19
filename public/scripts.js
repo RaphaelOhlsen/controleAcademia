@@ -1,17 +1,10 @@
 const currentPage = location.pathname;
 const menuItens = document.querySelectorAll("header .links a");
-const formDelete = document.querySelector("#form-delete");
 
 menuItens.forEach(item => {
     if(currentPage.includes(item.getAttribute('href')))
       item.classList.toggle('active');
 });
-
-formDelete.addEventListener("submit", e => {
-  const confirmation = confirm('Deseja Deletar ? ');
-  if(!confirmation) e.preventDefault();
-});
-
 
 function paginate(selectedPage, totalPages) {
 
@@ -38,3 +31,11 @@ function paginate(selectedPage, totalPages) {
 const pagination = document.querySelector(".pagination");
 const page = +pagination.dataset.page;
 const total = +pagination.dataset.total;
+const pages = paginate(page, total);
+
+let elements = "";
+pages.forEach(page => {
+  if(page === '...') return elements +=`<span>${page}</span>`
+  elements += `<a href="?page=${page}">${page}</a>`
+})
+pagination.innerHTML = elements;

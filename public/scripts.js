@@ -1,37 +1,40 @@
-// const currentPage = location.pathname;
-// const menuItens = document.querySelectorAll("header .links a");
-// const formDelete = document.querySelector("#form-delete");
+const currentPage = location.pathname;
+const menuItens = document.querySelectorAll("header .links a");
+const formDelete = document.querySelector("#form-delete");
 
-// menuItens.forEach(item => {
-//     if(currentPage.includes(item.getAttribute('href')))
-//       item.classList.toggle('active');
-// });
+menuItens.forEach(item => {
+    if(currentPage.includes(item.getAttribute('href')))
+      item.classList.toggle('active');
+});
 
-// formDelete.addEventListener("submit", e => {
-//   const confirmation = confirm('Deseja Deletar ? ');
-//   if(!confirmation) e.preventDefault();
-// });
+formDelete.addEventListener("submit", e => {
+  const confirmation = confirm('Deseja Deletar ? ');
+  if(!confirmation) e.preventDefault();
+});
 
 
-//Paginação
+function paginate(selectedPage, totalPages) {
 
-let totalPages = 20,
-    selectedPage = 6,
-    pages = [],
-    oldPage;
-
-for(let currentPage = 1; currentPage <= totalPages; currentPage++) {
-  const fisrtAndLastPage = currentPage == 1 || currentPage == totalPages;
-  const pagesAfterSelectdPage = currentPage <= selectedPage + 2;
-  const pagesBeforeSelectecPage = currentPage >=selectedPage - 2;
+  let pages = [],
+      oldPage;
   
-  if(fisrtAndLastPage || pagesBeforeSelectecPage && pagesAfterSelectdPage) {
-    if(oldPage && currentPage - oldPage > 2) pages.push('...');
-    pages.push(currentPage);
-    oldPage = currentPage;
+  for(let currentPage = 1; currentPage <= totalPages; currentPage++) {
+    const fisrtAndLastPage = currentPage == 1 || currentPage == totalPages;
+    const pagesAfterSelectdPage = currentPage <= selectedPage + 2;
+    const pagesBeforeSelectecPage = currentPage >=selectedPage - 2;
+    
+    if(fisrtAndLastPage || pagesBeforeSelectecPage && pagesAfterSelectdPage) {
+      if(oldPage && currentPage - oldPage > 2) pages.push('...');
+      pages.push(currentPage);
+      oldPage = currentPage;
+    }
+    if(currentPage == totalPages - 1 && currentPage - totalPages > 2) 
+      pages.push('...');
   }
-  if(currentPage == totalPages - 1 && currentPage - totalPages > 2) 
-    pages.push('...');
+  
+  return pages;
 }
 
-console.log(pages)
+const pagination = document.querySelector(".pagination");
+const page = +pagination.dataset.page;
+const total = +pagination.dataset.total;

@@ -102,6 +102,8 @@ module.exports = {
         return callback();
     });
   },
+  
+
   paginate(params) {
     const { filter, limit, offset, callback} = params;
     
@@ -117,10 +119,10 @@ module.exports = {
         OR instructors.services ILIKE '%${filter}%'
       `;
 
-      totalQuery = `
+      totalQuery = `(
         SELECT count (*) FROM instructors
         ${filterQuery}
-        ) AS total`;
+        ) as total`;
     }
 
     query = `
@@ -135,5 +137,5 @@ module.exports = {
       if (err) throw 'Database Error!'
       callback(results.rows);
     })
-  }
+  },
 }

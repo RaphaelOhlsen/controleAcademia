@@ -29,13 +29,21 @@ function paginate(selectedPage, totalPages) {
 }
 
 const pagination = document.querySelector(".pagination");
+const filter = pagination.dataset.filter;
 const page = +pagination.dataset.page;
 const total = +pagination.dataset.total;
 const pages = paginate(page, total);
 
 let elements = "";
 pages.forEach(page => {
-  if(page === '...') return elements +=`<span>${page}</span>`
-  elements += `<a href="?page=${page}">${page}</a>`
+  if(page === '...') {
+    elements +=`<span>${page}</span>`
+  } else {
+    if(filter) {
+      elements += `<a href="?page=${page}&filter=${filter}">${page}</a>`
+    } else {
+      elements += `<a href="?page=${page}">${page}</a>`
+    }
+  }
 })
 pagination.innerHTML = elements;
